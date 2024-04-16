@@ -1,0 +1,32 @@
+---
+import Menu from "../components/Menu.astro";
+import TitlePage from "../components/TitlePage.astro";
+import CardService from "../components/CardService.astro";
+import { defineScriptVars } from "astro/compiler-runtime";
+
+
+const services = [
+    {
+        titulo:"Web Develoment",
+        desc:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut laborum earum tempore debitis iure omnis saepe et optio ducimus nam quam dignissimos ullam id excepturi, veritatis aperiam quidem. Quae, dolore."
+    },
+    {
+        titulo:"Mobile Develoment",
+        desc:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut laborum earum tempore debitis iure omnis saepe et optio ducimus nam quam dignissimos ullam id excepturi, veritatis aperiam quidem. Quae, dolore."
+    },
+    {
+        titulo:"Consultation",
+        desc:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut laborum earum tempore debitis iure omnis saepe et optio ducimus nam quam dignissimos ullam id excepturi, veritatis aperiam quidem. Quae, dolore."
+    }
+]
+---
+
+<Menu/>
+<section class="bg-gray-200 pt-20 pb-28 px-8" >
+    <div class="max-w-6xl mx-auto" >
+        <TitlePage title="Services" subtitle="Here is what I offer"/>
+        <div class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20" >
+            {services.map((item)=> <CardService title={item.titulo} desc={item.desc}/>)}
+        </div>
+    </div>
+</section>
